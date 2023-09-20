@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<students>
+<root>
     <student>
-        <name>Student Name 1</name>
+        <name>Иванов</name>
         <subject>
-            <name>Subject 1</name>
-            <score>23</score>
+            <name>Химия</name>
+            <score>87</score>
         </subject>
         <subject>
-            <name>Subject 2</name>
-            <score>23</score>
+            <name>Биология</name>
+            <score>68</score>
+        </subject>
+    </student>
+    <student>
+        <name>Петров</name>
+        <subject>
+            <name>Химия</name>
+            <score>76</score>
+        </subject>
+        <subject>
+            <name>Биология</name>
+            <score>78</score>
         </subject>
         <!-- Add more subjects if needed -->
     </student>
-    <student>
-        <name>Student Name 2</name>
-        <subject>
-            <name>Subject 1</name>
-            <score>23</score>
-        </subject>
-        <subject>
-            <name>Subject 2</name>
-            <score>23</score>
-        </subject>
-        <!-- Add more subjects if needed -->
-    </student>
-</students>
+</root>

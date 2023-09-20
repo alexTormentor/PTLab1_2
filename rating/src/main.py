@@ -28,10 +28,10 @@ def main():
         return
 
     students = reader.read(path)
-    print("Students: ", students)
+    print("Студенты: ", students)
 
     rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    print("Общий рейтинг: ", rating)
 
 if __name__ == "__main__":
     main()
