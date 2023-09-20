@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <name>Student Name 1</name>
+        <subject>
+            <name>Subject 1</name>
+            <score>23</score>
+        </subject>
+        <subject>
+            <name>Subject 2</name>
+            <score>23</score>
+        </subject>
+        <!-- Add more subjects if needed -->
+    </student>
+    <student>
+        <name>Student Name 2</name>
+        <subject>
+            <name>Subject 1</name>
+            <score>23</score>
+        </subject>
+        <subject>
+            <name>Subject 2</name>
+            <score>23</score>
+        </subject>
+        <!-- Add more subjects if needed -->
+    </student>
+</students>
