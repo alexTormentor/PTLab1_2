@@ -3,6 +3,8 @@ import argparse
 import sys
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
+from StudentStatistics import StudentStatistics
+
 
 
 def get_path_from_arguments(args) -> str:
@@ -20,6 +22,13 @@ def main():
     print("Students: ", students)
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
+
+    # квартиль
+    stats = StudentStatistics(students)
+
+
+    first_quartile_students = stats.get_first_quartile_students()
+    print("First Quartile Students: ", first_quartile_students)
 
 
 if __name__ == "__main__":

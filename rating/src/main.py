@@ -4,7 +4,8 @@ import sys
 
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
-from XMLDataReader import XMLDataReader  # Import the XMLDataReader class
+from XMLDataReader import XMLDataReader
+from StudentCharacteristics import StudentCharacteristics
 
 
 def get_path_from_arguments(args) -> str:
@@ -32,6 +33,14 @@ def main():
 
     rating = CalcRating(students).calc()
     print("Общий рейтинг: ", rating)
+
+    # для определения квартиля
+    student_char = StudentCharacteristics(rating)
+
+    # вывод
+    first_quartile_students = student_char.calculate_first_quartile()
+    print("Студенты из первого квартиля: ", first_quartile_students)
+
 
 if __name__ == "__main__":
     main()
