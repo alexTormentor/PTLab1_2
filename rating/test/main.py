@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from rating.src.main import get_path_from_arguments
+from main2 import get_path_from_arguments
 import pytest
 
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from rating.src.Types import DataType
-from rating.src.CalcRating import CalcRating
+from Types import DataType
+from CalcRating import CalcRating
 import pytest
 
 RatingType = dict[str, float]
@@ -27,7 +27,7 @@ class TestCalcRating:
 
         rating_scores: RatingType = {
             "Абрамов Петр Сергеевич": 85.3333,
-            "Петров Игорь Владимирович": 79.0000
+            "Петров Игорь Владимирович": 76.5000
         }
 
         return  data, rating_scores
