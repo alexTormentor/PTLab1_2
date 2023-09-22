@@ -3,24 +3,46 @@
     <student>
         <name>Иванов</name>
         <subject>
-            <name>Химия</name>
-            <score>87</score>
+            <name>математика</name>
+            <score>60</score>
         </subject>
         <subject>
-            <name>Биология</name>
-            <score>68</score>
+            <name>программирование</name>
+            <score>70</score>
+        </subject>
+        <subject>
+            <name>литература</name>
+            <score>50</score>
         </subject>
     </student>
     <student>
         <name>Петров</name>
         <subject>
-            <name>Химия</name>
-            <score>76</score>
+            <name>математика</name>
+            <score>65</score>
         </subject>
         <subject>
-            <name>Биология</name>
-            <score>78</score>
+            <name>программирование</name>
+            <score>55</score>
         </subject>
-        <!-- Add more subjects if needed -->
+        <subject>
+            <name>литература</name>
+            <score>45</score>
+        </subject>
+    </student>
+    <student>
+        <name>Абрамов</name>
+        <subject>
+            <name>математика</name>
+            <score>75</score>
+        </subject>
+        <subject>
+            <name>программирование</name>
+            <score>80</score>
+        </subject>
+        <subject>
+            <name>литература</name>
+            <score>70</score>
+        </subject>
     </student>
 </root>
