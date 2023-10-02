@@ -17,3 +17,8 @@ class TestStudentStatistics:
         stats = StudentStatistics(input_data)
         first_quartile_students = stats.get_first_quartile_students()
         assert first_quartile_students == ['Student2']
+
+    def test_empty_data(self):
+        stats = StudentStatistics({})
+        first_quartile_students = stats.get_first_quartile_students()
+        assert first_quartile_students == []
