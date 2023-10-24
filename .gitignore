@@ -1,3 +1,4 @@
 /main.py
 /.pytest_cache/
 LICENSE.md
+test/.pytest_cache/
