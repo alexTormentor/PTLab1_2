@@ -12,8 +12,8 @@ class StudentStatistics:
 
     def get_first_quartile_students(self) -> List[str]:
         ratings = list(self.rating.values())
-        first_quartile = np.percentile(ratings, 25)
+        first_quartile = np.percentile(ratings, 75)
 
-        first_quartile_students = [student for student, rating in self.rating.items() if rating <= first_quartile]
+        first_quartile_students = [student for student, rating in self.rating.items() if rating >= first_quartile]
 
         return first_quartile_students
