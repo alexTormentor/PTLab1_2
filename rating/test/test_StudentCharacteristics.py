@@ -1,5 +1,5 @@
 import pytest
-from StudentCharacteristics import StudentCharacteristics
+from ComplexLibrary import StudentCharacteristics
 
 # тест кейсы
 @pytest.mark.parametrize("input_data, expected_result", [

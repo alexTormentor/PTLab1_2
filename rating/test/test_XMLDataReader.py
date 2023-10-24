@@ -1,6 +1,5 @@
 import pytest
-from Types import DataType
-from XMLDataReader import XMLDataReader
+from ComplexLibrary import DataType, XMLDataReader
 
 class TestXMLDataReader:
     @pytest.fixture()

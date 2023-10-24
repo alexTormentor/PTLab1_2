@@ -1,7 +1,5 @@
 import pytest
-from StudentCharacteristics import StudentCharacteristics
-from Types import DataType
-from CalcRating import CalcRating
+from ComplexLibrary import StudentCharacteristics, DataType, CalcRating
 
 RatingType = dict[str, float]
 
