@@ -1,4 +1,4 @@
 /main.py
-/.pytest_cache/
-LICENSE.md
-test/.pytest_cache/
+venv/
+.*cache
+__pycache__
