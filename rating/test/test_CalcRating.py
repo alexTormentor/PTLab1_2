@@ -29,9 +29,10 @@ class TestCalcRating:
             "Петров Игорь Владимирович": 76.5000
         }
 
-        return  data, rating_scores
+        return data, rating_scores
 
-    def test_init_calc_rating(self, input_data: tuple[DataType, RatingType]) -> None:
+    def test_init_calc_rating(self,
+                              input_data: tuple[DataType, RatingType]) -> None:
         calc_rating = CalcRating(input_data[0])
         assert input_data[0] == calc_rating.data
 
@@ -39,7 +40,8 @@ class TestCalcRating:
         rating = CalcRating(input_data[0]).calc()
         for student in rating.keys():
             rating_score = rating[student]
-            assert pytest.approx(rating_score, abs=0.001) == input_data[1][student]
+            assert pytest.approx(rating_score, abs=0.001) == \
+                   input_data[1][student]
 
     def test_empty_data(self, input_data: tuple[DataType, RatingType]) -> None:
         # Создайте объект CalcRating с пустыми данными
@@ -65,5 +67,3 @@ class TestCalcRating:
         rating = CalcRating(data).calc()
         for student, expected_score in expected_scores.items():
             assert pytest.approx(rating[student], abs=0.001) == expected_score
-
-

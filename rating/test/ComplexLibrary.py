@@ -39,7 +39,9 @@ class StudentCharacteristics:
 
         first_quartile = np.percentile(ratings, 25)
 
-        first_quartile_students = [student for student, student_rating in self.rating.items() if student_rating <= first_quartile]
+        first_quartile_students = [student for student, student_rating in
+                                   self.rating.items()
+                                   if student_rating <= first_quartile]
 
         return first_quartile_students
 
@@ -54,10 +56,11 @@ class StudentStatistics:
         ratings = list(self.rating.values())
         first_quartile = np.percentile(ratings, 25)
 
-        first_quartile_students = [student for student, rating in self.rating.items() if rating <= first_quartile]
+        first_quartile_students = [student for student, rating
+                                   in self.rating.items()
+                                   if rating <= first_quartile]
 
         return first_quartile_students
-
 
 
 class TextDataReader(DataReader):

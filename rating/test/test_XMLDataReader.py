@@ -1,6 +1,7 @@
 import pytest
 from ComplexLibrary import DataType, XMLDataReader
 
+
 class TestXMLDataReader:
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
