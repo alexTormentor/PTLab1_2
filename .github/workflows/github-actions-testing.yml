@@ -3,7 +3,7 @@ name: Testing the Python code
 on:
   push:
     branches:
-      - main
+      - TEST
 
 jobs:
   build:
