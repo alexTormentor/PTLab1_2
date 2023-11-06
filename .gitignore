@@ -1,5 +1,2 @@
 /main.py
-venv/
-.*cache
-__pycache__
-.pytest_cache/
+/test/.pytest_cache/
