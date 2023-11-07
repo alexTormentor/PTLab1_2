@@ -31,11 +31,23 @@ class TestCalcRating:
 
         return data, rating_scores
 
+    '''
+    Этот тест проверяет, что инициализация CalcRating нормальна
+    Сначала в input_data создается тестовый набор данных и ожидаемые оценки
+    Затем создается CalcRating с передачей данных
+    В конце теста проверяется, что в calc_rating все соответствует
+    ожидаемому input_data[0] с использованием assert.
+    прим. - ассерт чекает условие истинности'''
     def test_init_calc_rating(self,
                               input_data: tuple[DataType, RatingType]) -> None:
         calc_rating = CalcRating(input_data[0])
         assert input_data[0] == calc_rating.data
 
+    '''
+    проверяет правильность расчета рейтинга
+    для каждого студента в рейтинге (rating.keys()),
+    сравнивается фактический рейтинг с ожидаемым
+    '''
     def test_calc(self, input_data: tuple[DataType, RatingType]) -> None:
         rating = CalcRating(input_data[0]).calc()
         for student in rating.keys():
@@ -43,14 +55,12 @@ class TestCalcRating:
             assert pytest.approx(rating_score, abs=0.001) == \
                    input_data[1][student]
 
+    # оставил просто так, в принципе пойдет
     def test_empty_data(self, input_data: tuple[DataType, RatingType]) -> None:
-        # Создайте объект CalcRating с пустыми данными
         calc_rating = CalcRating({})
 
-        # Вызовите метод calc() для вычисления рейтинга
         rating = calc_rating.calc()
 
-        # Проверьте, что результатом является пустой словарь рейтингов
         assert rating == {}
 
     def test_negative_scores(self):

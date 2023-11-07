@@ -1,50 +1,49 @@
 import argparse
-import sys
+import os
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 from StudentCharacteristics import StudentCharacteristics
 from XMLDataReader import XMLDataReader
-from StudentStatistics import StudentStatistics
 
 
 class DataProcessor:
     def __init__(self, data_format):
         self.data_format = data_format
 
-    def getDataReader(self):
-        if self.data_format == "txt":
-            return TextDataReader()
-        elif self.data_format == "xml":
-            return XMLDataReader()
+    def processData(self, path):  # принимает путь к файлу
+        _, file_extension = os.path.splitext(path)  # путь к файлу на базовое
+        # имя и расширение.
+        # Результат присваивается file_extension.
+        # _ отбросит то, что осталось ЗА сплитом, эдакая заглушка
+        if file_extension == ".txt":
+            reader = TextDataReader()
+        elif file_extension == ".xml":
+            reader = XMLDataReader()
         else:
-            raise ValueError("Invalid data format. Use 'txt' or 'xml'.")
+            raise ValueError("Unsupported file format. Use '.txt' or '.xml'.")
 
-    def processData(self, path):
-        reader = self.getDataReader()
-        students = reader.read(path)
+        students = reader.read(path)  # читаем с пути
         print("Students: ", students)
 
-        rating = CalcRating(students).calc()
+        rating = CalcRating(students).calc()  # объекту CalcRating даем
+        # данные(кортеж то бишь студент: предмет-оценка)
         print("Rating: ", rating)
 
-        # For quartile determination
-        student_char = StudentCharacteristics(rating)
+        student_char = StudentCharacteristics(rating)  # сюда даем рейтинг
 
-        # Output
         first_quartile_students = student_char.calculate_first_quartile()
+        # счтаем квартиль
         print("First Quartile Students: ", first_quartile_students)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Path to datafile")
-    parser.add_argument("-f", dest="format", type=str, required=True,
-                        choices=["txt", "xml"],
-                        help="Data format (txt or xml)")
+    parser = argparse.ArgumentParser(description="Path to data file")
+    parser.add_argument("-p", dest="path", type=str,
+                        required=True, help="Path to data file")
     args = parser.parse_args()
 
-    data_type = "Text Data" if args.format == "txt" else "xml"
-    data_processor = DataProcessor(args.format)
-    data_processor.processData(f"./data/data.{args.format}")
+    data_processor = DataProcessor(args.path)
+    data_processor.processData(args.path)
 
 
 if __name__ == "__main__":
