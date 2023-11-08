@@ -1,5 +1,5 @@
 import pytest
-from src.StudentCharacteristics import  StudentCharacteristics
+from src.StudentCharacteristics import StudentCharacteristics
 
 
 # тест кейсы
