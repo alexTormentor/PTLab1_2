@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from ComplexLibrary import DataType, TextDataReader
+from src.Types import DataType
+from src.TextDataReader import TextDataReader
 
 
 class TestTextDataReader:

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from ComplexLibrary import DataType, CalcRating
+from src.CalcRating import CalcRating
+from src.Types import DataType
 import pytest
 
 RatingType = dict[str, float]

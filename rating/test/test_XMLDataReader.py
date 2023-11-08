@@ -1,5 +1,6 @@
 import pytest
-from ComplexLibrary import DataType, XMLDataReader
+from src.Types import DataType
+from src.XMLDataReader import XMLDataReader
 
 
 class TestXMLDataReader:

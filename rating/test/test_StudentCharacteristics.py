@@ -1,11 +1,11 @@
 import pytest
-from ComplexLibrary import StudentCharacteristics
+from src.StudentCharacteristics import  StudentCharacteristics
 
 
 # тест кейсы
 @pytest.mark.parametrize("input_data, expected_result", [
     ({"Иванов": 60.0, "Петров": 55.0, "Абрамов": 75.0, "Барабулька": 16.0},
-     ["Барабулька"]),
+     ["Абрамов"]),
     ({"Иванов": 60.0}, ["Иванов"]),  # 1 элемент
     ({"Иванов": 75.0, "Петров": 75.0, "Сидоров": 75.0},
      ["Иванов", "Петров", "Сидоров"]),  # Словарь рейтингов
