@@ -3,7 +3,7 @@ name: Testing the Python code
 on:
   push:
     branches:
-      - main
+      - TEST
 
 jobs:
   build:
@@ -22,12 +22,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r
-          requirements.txt; fi
-      - name: Lint with pycodestyle
-        run: |
-          pycodestyle src test
+          if [ -f $GITHUB_WORKSPACE/rating/requirements.txt ]; then pip install -r $GITHUB_WORKSPACE/rating/requirements.txt; fi
       - name: Test with pytest
         run: |
+          cd $GITHUB_WORKSPACE/rating
           PYTHONPATH=./:./src/ pytest test
+      - name: Install pycodestyle
+        run: pip install pycodestyle
+      - name: Lint with pycodestyle
+        run: |
+          pycodestyle $GITHUB_WORKSPACE/rating/src $GITHUB_WORKSPACE/rating/test
 
