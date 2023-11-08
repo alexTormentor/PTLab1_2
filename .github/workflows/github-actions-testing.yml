@@ -25,7 +25,7 @@ jobs:
           if [ -f $GITHUB_WORKSPACE/rating/requirements.txt ]; then pip install -r $GITHUB_WORKSPACE/rating/requirements.txt; fi
       - name: Test with pytest
         run: |
-          PYTHONPATH=./:./test/ pytest $GITHUB_WORKSPACE/rating/test
+          PYTHONPATH=./:./src/ pytest $GITHUB_WORKSPACE/rating/test
       - name: Install pycodestyle
         run: pip install pycodestyle
       - name: Lint with pycodestyle
