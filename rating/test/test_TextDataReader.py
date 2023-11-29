@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from rating.src.Types import DataType
-from rating.src.TextDataReader import TextDataReader
+from src.Types import DataType
+from src.TextDataReader import TextDataReader
 
 
 class TestTextDataReader:
